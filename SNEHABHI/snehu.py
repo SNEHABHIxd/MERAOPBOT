@@ -19,7 +19,7 @@ from config import (
 )
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
-from SNEHABHI.snehu import get_text, humanbytes
+from SNEHABHI.video import get_text, humanbytes
 from SNEHABHI.SNEHUABHI import __version__
 from SNEHABHI.SNEHUABHI.database import db
 from SNEHABHI.SNEHUABHI.dbtools import main_broadcast_handler

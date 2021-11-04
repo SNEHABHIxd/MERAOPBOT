@@ -19,8 +19,8 @@ from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 
 from config import BOT_USERNAME as bn
-from helpers.decorators import humanbytes
-from helpers.filters import command
+from SNEHABHI.SNEHUABHI.decorators import humanbytes
+from SNEHABHI.SNEHUABHI.filters import command
 
 @Client.on_message(command(["lyric", f"lyric@{bn}"]))
 async def lyrics(_, message):

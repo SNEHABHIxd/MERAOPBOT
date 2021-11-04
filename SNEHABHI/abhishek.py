@@ -5,7 +5,7 @@ from typing import Callable
 
 import aiofiles
 import aiohttp
-import SNEHABHI.converter
+import converter
 import ffmpeg
 import requests
 from SNEHABHI.cache.admins import admins as a
@@ -634,7 +634,7 @@ async def ytplay(_, message: Message):
     )
     message.from_user.first_name
     await generate_cover(title, thumbnail, ctitle)
-    file_path = await SNEHABHI.converter.convert(youtube.download(url))
+    file_path = await converter.convert(youtube.download(url))
     chat_id = get_chat_id(message.chat)
     if chat_id in SNEHABHI.callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)

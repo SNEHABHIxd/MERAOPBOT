@@ -1,2 +1,2 @@
 from . import queues
-from .SNEHABHI.callsmusic import pytgcalls, run
+from SNEHABHI.callsmusic.callsmusic import pytgcalls, run

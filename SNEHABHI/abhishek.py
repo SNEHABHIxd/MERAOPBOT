@@ -9,9 +9,9 @@ import converter
 import ffmpeg
 import requests
 from SNEHABHI.cache.admins import admins as a
-from callsmusic import callsmusic
-from callsmusic.callsmusic import client as USER
-from callsmusic.queues import queues
+from SNEHABHI.callsmusic import callsmusic
+from SNEHABHI.callsmusic.callsmusic import client as USER
+from SNEHABHI.callsmusic.queues import queues
 from config import (
     ASSISTANT_NAME,
     BOT_NAME,

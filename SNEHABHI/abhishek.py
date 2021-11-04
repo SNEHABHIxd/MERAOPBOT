@@ -22,7 +22,7 @@ from config import (
     UPDATES_CHANNEL,
     que,
 )
-from downloaders import youtube
+from SNEHABHI.downloaders import youtube
 from SNEHABHI.SNEHUABHI.admins import get_administrators
 from SNEHABHI.SNEHUABHI.channelmusic import get_chat_id
 from SNEHABHI.SNEHUABHI.chattitle import CHAT_TITLE

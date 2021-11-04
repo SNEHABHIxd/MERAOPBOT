@@ -46,7 +46,7 @@ async def update_admin(client, message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**"
+        "✅ Bot **𝚁𝙴𝙻𝙾𝙰𝙳𝙴𝙳 𝙲𝙾𝚁𝚁𝙴𝙲𝚃𝙻𝚈 𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝙱𝙾𝚃𝚉 !**\n✅ **𝙰𝙳𝙼𝙸𝙻𝙸𝚂𝚃** 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 **𝚄𝙿𝙳𝙰𝚃𝙴𝙳 𝙱𝚈 @SNEHABHI_UPDATES !**"
     )
 
 
@@ -56,7 +56,7 @@ async def update_admin(client, message):
 @authorized_users_only
 async def controlset(_, message: Message):
     await message.reply_text(
-        "💡 **here is the control menu of bot :**",
+        "💡 **𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙼𝙴𝙽𝚄 𝙲𝙾𝙽𝚃𝚁𝙾𝙻 𝙾𝙵 𝙱𝙾𝚃 :**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [

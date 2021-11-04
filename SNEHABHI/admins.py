@@ -1,14 +1,14 @@
 from asyncio import QueueEmpty
 
-from callsmusic import callsmusic
-from callsmusic.queues import queues
+from SNEHABHI.callsmusic import callsmusic
+from SNEHABHI.callsmusic.queues import queues
 from config import BOT_USERNAME, que
-from cache.admins import admins
-from handlers.play import cb_admin_check
-from helpers.channelmusic import get_chat_id
-from helpers.dbtools import delcmd_is_on, delcmd_off, delcmd_on, handle_user_status
-from helpers.decorators import authorized_users_only, errors
-from helpers.filters import command, other_filters
+from SNEHABHI.cache.admins import admins
+from SNEHABHI.abhishek import cb_admin_check
+from SNEHABHI.SNEHUABHI.channelmusic import get_chat_id
+from SNEHABHI.SNEHUABHI.dbtools import delcmd_is_on, delcmd_off, delcmd_on, handle_user_status
+from SNEHABHI.SNEHUABHI.decorators import authorized_users_only, errors
+from SNEHABHI.SNEHUABHI.filters import command, other_filters
 from pyrogram import Client, filters
 from pyrogram.types import (
     CallbackQuery,

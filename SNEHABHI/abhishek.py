@@ -23,12 +23,12 @@ from config import (
     que,
 )
 from downloaders import youtube
-from helpers.admins import get_administrators
-from helpers.channelmusic import get_chat_id
-from helpers.chattitle import CHAT_TITLE
-from helpers.decorators import authorized_users_only
-from helpers.filters import command, other_filters
-from helpers.gets import get_file_name
+from SNEHABHI.SNEHUABHI.admins import get_administrators
+from SNEHABHI.SNEHUABHI.channelmusic import get_chat_id
+from SNEHABHI.SNEHUABHI.chattitle import CHAT_TITLE
+from SNEHABHI.SNEHUABHI.decorators import authorized_users_only
+from SNEHABHI.SNEHUABHI.filters import command, other_filters
+from SNEHABHI.SNEHUABHI.gets import get_file_name
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
@@ -154,7 +154,7 @@ async def playlist(client, message):
 
 # ============================= Settings =========================================
 def updated_stats(chat, queue, vol=100):
-    if chat.id in callsmusic.pytgcalls.active_calls:
+    if chat.id in SNEHABHI.callsmusic.pytgcalls.active_calls:
         stats = "⚙ settings for **{}**".format(chat.title)
         if len(que) > 0:
             stats += "\n\n"
@@ -210,7 +210,7 @@ def r_ply(type_):
 async def settings(client, message):
     global que
     playing = None
-    if message.chat.id in callsmusic.pytgcalls.active_calls:
+    if message.chat.id in SNEHABHI.callsmusic.pytgcalls.active_calls:
         playing = True
     queue = que.get(message.chat.id)
     stats = updated_stats(message.chat, queue)
@@ -346,14 +346,14 @@ async def m_cb(b, cb):
 
     the_data = cb.message.reply_markup.inline_keyboard[1][0].callback_data
     if type_ == "pause":
-        if (chet_id not in callsmusic.pytgcalls.active_calls) or (
-            callsmusic.pytgcalls.active_calls[chet_id] == "paused"
+        if (chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls) or (
+            SNEHABHI.callsmusic.pytgcalls.active_calls[chet_id] == "paused"
         ):
             await cb.answer(
                 "assistant is not connected to voice chat !", show_alert=True
             )
         else:
-            callsmusic.pytgcalls.pause_stream(chet_id)
+            SNEHABHI.callsmusic.pytgcalls.pause_stream(chet_id)
 
             await cb.answer("music paused")
             await cb.message.edit(
@@ -361,14 +361,14 @@ async def m_cb(b, cb):
             )
 
     elif type_ == "play":
-        if (chet_id not in callsmusic.pytgcalls.active_calls) or (
-            callsmusic.pytgcalls.active_calls[chet_id] == "playing"
+        if (chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls) or (
+            SNEHABHI.callsmusic.pytgcalls.active_calls[chet_id] == "playing"
         ):
             await cb.answer(
                 "assistant is not connected to voice chat !", show_alert=True
             )
         else:
-            callsmusic.pytgcalls.resume_stream(chet_id)
+            SNEHABHI.callsmusic.pytgcalls.resume_stream(chet_id)
             await cb.answer("music resumed")
             await cb.message.edit(
                 updated_stats(m_chat, qeue), reply_markup=r_ply("pause")
@@ -399,26 +399,26 @@ async def m_cb(b, cb):
 
     elif type_ == "resume":
         psn = "▶ music playback has resumed"
-        if (chet_id not in callsmusic.pytgcalls.active_calls) or (
-            callsmusic.pytgcalls.active_calls[chet_id] == "playing"
+        if (chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls) or (
+            SNEHABHI.callsmusic.pytgcalls.active_calls[chet_id] == "playing"
         ):
             await cb.answer(
                 "voice chat is not connected or already playing", show_alert=True
             )
         else:
-            callsmusic.pytgcalls.resume_stream(chet_id)
+            SNEHABHI.callsmusic.pytgcalls.resume_stream(chet_id)
             await cb.message.edit(psn, reply_markup=keyboard)
 
     elif type_ == "puse":
         spn = "⏸ music playback has paused"
-        if (chet_id not in callsmusic.pytgcalls.active_calls) or (
-            callsmusic.pytgcalls.active_calls[chet_id] == "paused"
+        if (chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls) or (
+            SNEHABHI.callsmusic.pytgcalls.active_calls[chet_id] == "paused"
         ):
             await cb.answer(
                 "voice chat is not connected or already paused", show_alert=True
             )
         else:
-            callsmusic.pytgcalls.pause_stream(chet_id)
+            SNEHABHI.callsmusic.pytgcalls.pause_stream(chet_id)
 
             await cb.message.edit(spn, reply_markup=keyboard)
 
@@ -462,15 +462,15 @@ async def m_cb(b, cb):
         mmk = "⏭ CURRENT SONG SKIPPED JOIN @SNEHABHI_UPDATES"
         if qeue:
             qeue.pop(0)
-        if chet_id not in callsmusic.pytgcalls.active_calls:
+        if chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls:
             await cb.answer(
                 "assistant is not connected to voice chat !", show_alert=True
             )
         else:
-            callsmusic.queues.task_done(chet_id)
+            SNEHABHI.callsmusic.queues.task_done(chet_id)
 
-            if callsmusic.queues.is_empty(chet_id):
-                callsmusic.pytgcalls.leave_group_call(chet_id)
+            if SNEHABHI.callsmusic.queues.is_empty(chet_id):
+                SNEHABHI.callsmusic.pytgcalls.leave_group_call(chet_id)
 
                 await cb.message.edit(
                     nmq,
@@ -479,20 +479,20 @@ async def m_cb(b, cb):
                     ),
                 )
             else:
-                callsmusic.pytgcalls.change_stream(
-                    chet_id, callsmusic.queues.get(chet_id)["file"]
+                SNEHABHI.callsmusic.pytgcalls.change_stream(
+                    chet_id, SNEHABHI.callsmusic.queues.get(chet_id)["file"]
                 )
                 await cb.message.edit(mmk, reply_markup=keyboard)
 
     elif type_ == "leave":
         hps = "✅ **the music playback has ended**"
-        if chet_id in callsmusic.pytgcalls.active_calls:
+        if chet_id in SNEHABHI.callsmusic.pytgcalls.active_calls:
             try:
-                callsmusic.queues.clear(chet_id)
+                SNEHABHI.callsmusic.queues.clear(chet_id)
             except QueueEmpty:
                 pass
 
-            callsmusic.pytgcalls.leave_group_call(chet_id)
+            SNEHABHI.callsmusic.pytgcalls.leave_group_call(chet_id)
             await cb.message.edit(
                     hps,
                     reply_markup=InlineKeyboardMarkup(
@@ -636,7 +636,7 @@ async def ytplay(_, message: Message):
     await generate_cover(title, thumbnail, ctitle)
     file_path = await converter.convert(youtube.download(url))
     chat_id = get_chat_id(message.chat)
-    if chat_id in callsmusic.pytgcalls.active_calls:
+    if chat_id in SNEHABHI.callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
         s_name = title
@@ -659,7 +659,7 @@ async def ytplay(_, message: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         try:
-            callsmusic.pytgcalls.join_group_call(chat_id, file_path)
+            SNEHABHI.callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
             await lel.edit(
                 "😕 VC TO ON KAR LO PAHLE SIR/MADAM 😐 GANE KAHA BAJAU MAI BINA VC ON KE 🙂"

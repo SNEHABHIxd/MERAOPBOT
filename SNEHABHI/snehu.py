@@ -19,12 +19,12 @@ from config import (
 )
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
-from handlers.song import get_text, humanbytes
-from handlers import __version__
-from helpers.database import db
-from helpers.dbtools import main_broadcast_handler
-from helpers.decorators import sudo_users_only
-from helpers.filters import command
+from SNEHABHI.snehu import get_text, humanbytes
+from SNEHABHI.SNEHUABHI import __version__
+from SNEHABHI.SNEHUABHI.database import db
+from SNEHABHI.SNEHUABHI.dbtools import main_broadcast_handler
+from SNEHABHI.SNEHUABHI.decorators import sudo_users_only
+from SNEHABHI.SNEHUABHI.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import Message
 

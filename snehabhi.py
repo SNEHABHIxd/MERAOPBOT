@@ -3,7 +3,7 @@ from pyrogram import Client as Bot
 
 
 from config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
-from handlers import __version__
+from SNEHABHI import __version__
 
 response = requests.get(BG_IMAGE)
 with open("./etc/snehuxabhi.jpg", "wb") as file:

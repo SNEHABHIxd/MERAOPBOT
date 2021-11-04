@@ -1,0 +1,79 @@
+{
+    "name": "𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝙼𝚄𝚂𝙸𝙲 𝙿𝙻𝙰𝚈𝙴𝚁",
+    "logo": "https://telegra.ph/file/4637473e97df9854a1b36.png",
+    "description": "𝚂𝙽𝙴𝙷𝙰𝙱𝙷𝙸 𝙼𝚄𝚂𝙸𝙲 𝙿𝙻𝙰𝚈𝙴𝚁 𝙰𝙻𝙻𝙾𝚆 𝚃𝙾 𝙿𝙻𝙰𝚈 𝙼𝚄𝚂𝙸𝙲 𝚃𝙾 𝚅𝙲.",
+    "keywords": ["music", "voice chat", "telegram"],
+    "repository": "https://github.com/SNEHABHIxd/MERAOPBOT",
+    "stack": "container",
+    "env": {
+        "SESSION_NAME": {
+            "description": "fill with the pyrogram session string",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "fill with your bot token from @BotFather",
+            "required": true
+        },
+        "BOT_NAME": {
+            "description": "fill with your music bot name.",
+            "required": true,
+            "value": ""
+        },
+        "OWNER_ID": {
+            "description": "fill with your telegram id as the owner of the bot",
+            "required": true,
+            "value": ""
+        },
+        "DATABASE_URL": {
+            "description": "fill with the mongodb url you get from cloud.mongodb.com",
+            "required": true,
+            "value": ""
+        },
+        "LOG_CHANNEL": {
+            "description": "create a private channel and get the channel id, add your bot as admin to the channel too",
+            "required": true,
+            "value": ""
+        },
+        "BOT_USERNAME": {
+            "description": "fill with your bot username without @",
+            "required": true,
+            "value": "SNEHABHI_BOT"
+        },
+        "ASSISTANT_NAME": {
+            "description": "fill with the assistant username without @",
+            "required": true,
+            "value": "SNEHABHI_MUSICS"
+       },
+        "OWNER_NAME": {
+            "description": "fill with your username without @",
+            "required": false,
+            "value": "SNEHU_IS_MINE"
+        },
+        "API_ID": {
+            "description": "your Api ID from my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "your Api Hash from my.telegram.org/apps",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "fill with the user id who can access all function in your bot (separate with space).",
+            "required": true
+        },
+        "DURATION_LIMIT": {
+            "description": "max duration for music to download (in minutes).",
+            "required": true,
+            "value": "40"
+        
+        }
+    },
+    "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}

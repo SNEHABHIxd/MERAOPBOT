@@ -5,7 +5,6 @@ from SNEHABHI.callsmusic.queues import queues
 from config import BOT_USERNAME, que
 from SNEHABHI.cache.admins import admins
 from SNEHABHI.abhishek import cb_admin_check
-from SNEHABHI.SNEHUABHI.channelmusic import get_chat_id
 from SNEHABHI.SNEHUABHI.dbtools import delcmd_is_on, delcmd_off, delcmd_on, handle_user_status
 from SNEHABHI.SNEHUABHI.decorators import authorized_users_only, errors
 from SNEHABHI.SNEHUABHI.filters import command, other_filters

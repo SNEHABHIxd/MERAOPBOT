@@ -1,6 +1,6 @@
 from os import path
 
-import SNEHABHI.converter
+import converter
 from SNEHABHI.callsmusic import callsmusic, queues
 from config import (
     AUD_IMG,

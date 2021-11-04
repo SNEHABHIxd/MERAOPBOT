@@ -7,8 +7,8 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from config import BOT_USERNAME
-from helpers.filters import command
-from helpers.get_file_id import get_file_id
+from SNEHABHI.SNEHUABHI.filters import command
+from SNEHABHI.SNEHUABHI.get_file_id import get_file_id
 
 
 @Client.on_message(command(["id", f"id@{BOT_USERNAME}"]))

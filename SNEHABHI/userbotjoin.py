@@ -1,9 +1,9 @@
 import asyncio
 
-from callsmusic.callsmusic import client as USER
+from SNEHABHI.callsmusic.callsmusic import client as USER
 from config import BOT_USERNAME, SUDO_USERS
-from helpers.decorators import authorized_users_only, errors
-from helpers.filters import command
+from SNEHABHI.SNEHUABHI.decorators import authorized_users_only, errors
+from SNEHABHI.SNEHUABHI.filters import command
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
 

@@ -1,7 +1,7 @@
 from os import path
 
-import converter
-from callsmusic import callsmusic, queues
+import SNEHABHI.converter
+from SNEHABHI.callsmusic import callsmusic, queues
 from config import (
     AUD_IMG,
     BOT_USERNAME,
@@ -10,9 +10,9 @@ from config import (
     QUE_IMG,
     UPDATES_CHANNEL,
 )
-from handlers.play import convert_seconds
-from helpers.filters import command, other_filters
-from helpers.gets import get_file_name
+from SNEHABHI.abhishek import convert_seconds
+from SNEHABHI.SNEHUABHI.filters import command, other_filters
+from SNEHABHI.SNEHUABHI.gets import get_file_name
 from pyrogram import Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 

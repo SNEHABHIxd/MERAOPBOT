@@ -361,7 +361,7 @@ async def m_cb(b, cb):
             )
 
     elif type_ == "play":
-        if (chet_id not in SNEHABHI.callsmusic.pytgcalls.active_calls) or (
+        if (chet_id not in callsmusic.pytgcalls.active_calls) or (
             callsmusic.pytgcalls.active_calls[chet_id] == "playing"
         ):
             await cb.answer(
